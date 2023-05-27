@@ -9,3 +9,7 @@ h1 {
 a {
     color: rgb(0, 255, 255);
 }
+div {
+    border: 10px;
+    border-radius: 5px soloid;
+}
