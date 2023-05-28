@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>JavaScript Console</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/icon.png">
+    <title>Kiddie's Hacking-World</title>
 </head>
 <body>
-  <h1>JavaScript Console</h1>
-
-  <button onclick="toggleConsole()">Toggle Console</button>
-
-  <div id="console" style="display: none;">
-    <input type="text" id="input" placeholder="Enter JavaScript code">
-    <button onclick="executeCode()">Execute</button>
-    <div id="output"></div>
-  </div>
-  <script>
-    function toggleConsole() {
-      var consoleDiv = document.getElementById("console");
-      consoleDiv.style.display = (consoleDiv.style.display === "none") ? "block" : "none";
-    }
-
-    function executeCode() {
-      var codeInput = document.getElementById("input");
-      var codeOutput = document.getElementById("output");
-
-      try {
-        var result = eval(codeInput.value);
-        codeOutput.innerText = result;
-      } catch (error) {
-        codeOutput.innerText = "Error: " + error.message;
-      }
-
-      codeInput.value = "";
-    }
-  </script>
+    <h1>JavaScript Console</h1>
+    <button onclick="toggleConsole()">Toggle Console</button>
+    <div id="console" style="display: none;">
+        <input type="text" id="input" placeholder="Enter JavaScript code">
+        <button onclick="executeCode()">Execute</button>
+        <div id="output"></div>
+    </div>
+    <script>
+        function toggleConsole() {
+            var consoleDiv = document.getElementById("console");
+            consoleDiv.style.display = (consoleDiv.style.display === "none") ? "block" : "none";
+        }
+        function executeCode() {
+            var codeInput = document.getElementById("input");
+            var codeOutput = document.getElementById("output");
+            try {
+                var result = eval(codeInput.value);
+                codeOutput.innerText = result;
+            } catch (error) {
+                codeOutput.innerText = "Error: " + error.message;
+            }
+            codeInput.value = "";
+        }
+    </script>
 </body>
 </html>
