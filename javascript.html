@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Console</title>
+</head>
+<body>
+  <h1>JavaScript Console</h1>
+
+  <button onclick="toggleConsole()">Toggle Console</button>
+
+  <div id="console" style="display: none;">
+    <input type="text" id="input" placeholder="Enter JavaScript code">
+    <button onclick="executeCode()">Execute</button>
+    <div id="output"></div>
+  </div>
+  <script>
+    function toggleConsole() {
+      var consoleDiv = document.getElementById("console");
+      consoleDiv.style.display = (consoleDiv.style.display === "none") ? "block" : "none";
+    }
+
+    function executeCode() {
+      var codeInput = document.getElementById("input");
+      var codeOutput = document.getElementById("output");
+
+      try {
+        var result = eval(codeInput.value);
+        codeOutput.innerText = result;
+      } catch (error) {
+        codeOutput.innerText = "Error: " + error.message;
+      }
+
+      codeInput.value = "";
+    }
+  </script>
+</body>
+</html>
